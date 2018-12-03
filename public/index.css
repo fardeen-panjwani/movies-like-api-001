@@ -13,6 +13,11 @@ body {
 }
 
 
+.logo {
+	max-height: 38vh;
+}
+
+
 .main-container {
 
 	display: flex;

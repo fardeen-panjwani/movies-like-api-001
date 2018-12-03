@@ -3,18 +3,8 @@ const mongoose = require("mongoose")
 const userSchema = mongoose.Schema({
 
     _id: {
-        type: mongoose.Schema.Types.ObjectId
-    }, 
-
-    username: {
-        type: String, 
-        required: true
-    }, 
-
-    password: {
-        type: String, 
-        required: true
-    }, 
+        type: mongoose.Schema.Types.Mixed
+    },
     
     email: {
         type: String, 
@@ -25,7 +15,6 @@ const userSchema = mongoose.Schema({
         type: String,
         default: `${new Date().getDay() + 1}/${new Date().getMonth() + 1}/${new Date().getFullYear()} at ${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`
     },
-
 
     country: {
         type: String, 

@@ -4,6 +4,8 @@ const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 const morgan = require("morgan")
 
+const PORT = process.env.PORT || 8080;
+
 require('dotenv').config();
 
 const userRoute = require('./app/routes/user/user.route');
@@ -25,8 +27,6 @@ app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 
 mongoose.connect(`mongodb+srv://${process.env.MON_ATL_USER}:${process.env.MON_ATL_PWD}@movies-like-0jptf.mongodb.net/test?retryWrites=true`);
-
-const PORT = process.env.PORT || 8080;
 
 app.use('/user', userRoute);
 
